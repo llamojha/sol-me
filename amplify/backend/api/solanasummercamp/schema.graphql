@@ -1,0 +1,10 @@
+type Users @model @searchable @auth(rules: [{allow: public}]) {
+  id: ID!
+  WalletAddress: String!
+  Username: String
+  ProfileImage: AWSURL
+  ProfileBanner: AWSURL
+  Description: String
+  DonationDescription: String
+  DescriptionTitle: String
+}
