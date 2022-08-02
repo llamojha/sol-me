@@ -22,7 +22,7 @@ const ProfilePage: FC = (props) => {
 
 return (
   <div className="ProfilePage">
-      <ProfileDetail users={randomUser}  />
+      <ProfileDetail user={randomUser}  />
   </div>
   );
 }
