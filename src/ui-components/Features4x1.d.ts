@@ -9,8 +9,8 @@ import { Users } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type Features4x1Props = React.PropsWithChildren<Partial<FlexProps> & {
-    user2?: Users;
     user1?: Users;
+    user2?: Users;
     user3?: Users;
     user4?: Users;
 } & {

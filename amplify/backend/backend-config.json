@@ -1,6 +1,6 @@
 {
   "api": {
-    "solanasummercamp": {
+    "solme": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

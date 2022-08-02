@@ -8,6 +8,8 @@ import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type NavBarWalletProps = React.PropsWithChildren<Partial<FlexProps> & {
+    property1?: "Default";
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function NavBarWallet(props: NavBarWalletProps): React.ReactElement;

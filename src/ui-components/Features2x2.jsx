@@ -35,7 +35,6 @@ export default function Features2x2(props) {
       >
         <Flex
           gap="24px"
-          direction="row"
           justifyContent="center"
           alignItems="center"
           shrink="0"
@@ -162,7 +161,6 @@ export default function Features2x2(props) {
         </Flex>
         <Flex
           gap="24px"
-          direction="row"
           justifyContent="center"
           alignItems="center"
           shrink="0"

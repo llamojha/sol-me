@@ -9,11 +9,10 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Divider, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function ProfileDetail(props) {
-  const { profileId, users, overrides, ...rest } = props;
+  const { user, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
-      direction="row"
       alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
@@ -23,7 +22,6 @@ export default function ProfileDetail(props) {
     >
       <Flex
         gap="24px"
-        direction="row"
         width="100%"
         alignItems="flex-start"
         shrink="0"
@@ -50,7 +48,7 @@ export default function ProfileDetail(props) {
             objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
-            src={users?.ProfileBanner}
+            src={user?.ProfileBanner}
             {...getOverrideProps(overrides, "ProfileBanner")}
           ></Image>
           <Flex
@@ -100,7 +98,7 @@ export default function ProfileDetail(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children={users?.DescriptionTitle}
+                children={user?.DonationTitle}
                 {...getOverrideProps(overrides, "DescriptionTitle")}
               ></Text>
               <Text
@@ -120,7 +118,7 @@ export default function ProfileDetail(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children={users?.Description}
+                children={user?.Description}
                 {...getOverrideProps(overrides, "DescriptionText")}
               ></Text>
             </Flex>
@@ -137,7 +135,6 @@ export default function ProfileDetail(props) {
         >
           <Flex
             gap="16px"
-            direction="row"
             width="200px"
             height="100px"
             alignItems="center"
@@ -154,7 +151,7 @@ export default function ProfileDetail(props) {
               position="relative"
               borderRadius="160px"
               padding="0px 0px 0px 0px"
-              src={users?.ProfileImage}
+              src={user?.ProfileImage}
               {...getOverrideProps(overrides, "ProfilePicture")}
             ></Image>
             <Text
@@ -172,7 +169,7 @@ export default function ProfileDetail(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children={users?.Username}
+              children={user?.Username}
               {...getOverrideProps(overrides, "Username")}
             ></Text>
           </Flex>
@@ -191,12 +188,11 @@ export default function ProfileDetail(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={users?.DonationDescription}
+            children={user?.DonationDescription}
             {...getOverrideProps(overrides, "DonationDescription")}
           ></Text>
           <Flex
             gap="16px"
-            direction="row"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -237,7 +233,6 @@ export default function ProfileDetail(props) {
               position="absolute"
               top="0px"
               left="0px"
-              direction="row"
               width="371px"
               justifyContent="center"
               alignItems="center"

@@ -6,5 +6,5 @@ type Users @model @searchable @auth(rules: [{allow: public}]) {
   ProfileBanner: AWSURL
   Description: String
   DonationDescription: String
-  DescriptionTitle: String
+  DonationTitle: String
 }

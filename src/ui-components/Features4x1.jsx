@@ -9,12 +9,12 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Text } from "@aws-amplify/ui-react";
 export default function Features4x1(props) {
-  const { user2, user1, user3, user4, overrides, ...rest } = props;
+  const { user1, user2, user3, user4, overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
       direction="column"
-      width="100%"
+      width="1440px"
       justifyContent="center"
       alignItems="center"
       position="relative"
@@ -25,7 +25,6 @@ export default function Features4x1(props) {
     >
       <Flex
         gap="24px"
-        direction="row"
         justifyContent="center"
         alignItems="center"
         shrink="0"
@@ -81,7 +80,7 @@ export default function Features4x1(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={user1?.DescriptionTitle}
+            children={user1?.DonationTitle}
             {...getOverrideProps(
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766581"
@@ -134,7 +133,7 @@ export default function Features4x1(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={user2?.DescriptionTitle}
+            children={user2?.DonationTitle}
             {...getOverrideProps(
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766584"
@@ -187,7 +186,7 @@ export default function Features4x1(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={user3?.DescriptionTitle}
+            children={user3?.DonationTitle}
             {...getOverrideProps(
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766587"
@@ -240,7 +239,7 @@ export default function Features4x1(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={user4?.DescriptionTitle}
+            children={user4?.DonationTitle}
             {...getOverrideProps(
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766590"

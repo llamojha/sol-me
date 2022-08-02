@@ -1,5 +1,5 @@
 {
-  "AppSyncApiName": "solanasummercamp",
+  "AppSyncApiName": "solme",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false
 }

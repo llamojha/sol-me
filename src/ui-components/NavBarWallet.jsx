@@ -6,14 +6,36 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  getOverridesFromVariants,
+  mergeVariantsAndOverrides,
+} from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBarWallet(props) {
-  const { overrides, ...rest } = props;
+  const { overrides: overridesProp, ...rest } = props;
+  const variants = [
+    {
+      overrides: {
+        LogoImage: {},
+        LogoInFrame: {},
+        LogoText: {},
+        LogoFrame: {},
+        Button: {},
+        SearchBar: {},
+        SolanaWallet: {},
+        NavBarWallet: {},
+      },
+      variantValues: { property1: "Default" },
+    },
+  ];
+  const overrides = mergeVariantsAndOverrides(
+    getOverridesFromVariants(variants, props),
+    overridesProp || {}
+  );
   return (
     <Flex
       gap="20px"
-      direction="row"
       height="96px"
       alignItems="flex-start"
       position="relative"
@@ -24,7 +46,6 @@ export default function NavBarWallet(props) {
     >
       <Flex
         gap="2px"
-        direction="row"
         width="152px"
         alignItems="center"
         shrink="0"
@@ -48,7 +69,7 @@ export default function NavBarWallet(props) {
             top="0px"
             left="0px"
             padding="0px 0px 0px 0px"
-            src={`${"logo"}${""}`}
+            src="logo"
             {...getOverrideProps(overrides, "LogoImage")}
           ></Image>
         </View>
@@ -73,7 +94,6 @@ export default function NavBarWallet(props) {
       </Flex>
       <Flex
         gap="32px"
-        direction="row"
         width="976px"
         justifyContent="flex-end"
         alignItems="center"
@@ -81,13 +101,13 @@ export default function NavBarWallet(props) {
         basis="976px"
         height="48px"
         position="relative"
+        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "SearchBar")}
       >
         <Button
           display="flex"
           gap="0"
-          direction="row"
           width="fit-content"
           height="48px"
           justifyContent="center"
@@ -97,7 +117,7 @@ export default function NavBarWallet(props) {
           size="default"
           isDisabled={false}
           variation="primary"
-          children="Log in / Signup"
+          children="Sign Up"
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

@@ -20,7 +20,6 @@ export default function NavBarOriginal(props) {
   return (
     <Flex
       gap="20px"
-      direction="row"
       width="1440px"
       justifyContent="center"
       alignItems="center"
@@ -32,7 +31,6 @@ export default function NavBarOriginal(props) {
     >
       <Flex
         gap="2px"
-        direction="row"
         width="fit-content"
         justifyContent="center"
         alignItems="center"
@@ -78,7 +76,6 @@ export default function NavBarOriginal(props) {
       </Flex>
       <Flex
         gap="40px"
-        direction="row"
         width="633.5px"
         alignItems="center"
         grow="1"
@@ -163,7 +160,6 @@ export default function NavBarOriginal(props) {
       </Flex>
       <Flex
         gap="32px"
-        direction="row"
         width="633.5px"
         justifyContent="flex-end"
         alignItems="center"

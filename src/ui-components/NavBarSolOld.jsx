@@ -13,7 +13,6 @@ export default function NavBarSolOld(props) {
   return (
     <Flex
       gap="20px"
-      direction="row"
       height="90px"
       alignItems="flex-start"
       position="relative"
@@ -24,7 +23,6 @@ export default function NavBarSolOld(props) {
     >
       <Flex
         gap="2px"
-        direction="row"
         width="152px"
         alignItems="center"
         shrink="0"
@@ -35,7 +33,6 @@ export default function NavBarSolOld(props) {
       >
         <Flex
           gap="10px"
-          direction="row"
           width="fit-content"
           alignItems="flex-start"
           shrink="0"
@@ -86,7 +83,6 @@ export default function NavBarSolOld(props) {
       ></Flex>
       <Flex
         gap="32px"
-        direction="row"
         width="239px"
         justifyContent="flex-end"
         alignItems="center"

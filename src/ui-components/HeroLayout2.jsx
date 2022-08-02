@@ -13,7 +13,7 @@ export default function HeroLayout2(props) {
   const { overrides, ...rest } = props;
   return (
     <View
-      width="100%"
+      width="1440px"
       height="858px"
       position="relative"
       padding="0px 0px 0px 0px"

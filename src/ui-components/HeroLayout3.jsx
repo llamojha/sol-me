@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Text, View } from "@aws-amplify/ui-react";
 export default function HeroLayout3(props) {
-  const { HeroLanding, overrides, ...rest } = props;
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
@@ -56,7 +56,7 @@ export default function HeroLayout3(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="This the the landing page for the solana summer camp project"
+          children={`${"This the the landing page for the solana summer camp project"}${""}`}
           {...getOverrideProps(overrides, "LOREM IPSUM")}
         ></Text>
         <Flex
@@ -85,7 +85,7 @@ export default function HeroLayout3(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="A Solana Summer Camp Project"
+            children="SOL-ME Platform"
             {...getOverrideProps(
               overrides,
               "Ut enim ad minim veniam quis nostrud"
@@ -108,7 +108,7 @@ export default function HeroLayout3(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="This is the description of the project"
+            children="Description for the Project"
             {...getOverrideProps(
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."

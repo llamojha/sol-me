@@ -16,7 +16,7 @@ export declare class Users {
   readonly ProfileBanner?: string | null;
   readonly Description?: string | null;
   readonly DonationDescription?: string | null;
-  readonly DescriptionTitle?: string | null;
+  readonly DonationTitle?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Users, UsersMetaData>);

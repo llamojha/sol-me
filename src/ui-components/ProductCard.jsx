@@ -23,7 +23,6 @@ export default function ProductCard(props) {
   return (
     <Flex
       gap="0"
-      direction="row"
       width="960px"
       alignItems="flex-start"
       position="relative"
@@ -72,7 +71,6 @@ export default function ProductCard(props) {
         ></Text>
         <Flex
           gap="16px"
-          direction="row"
           width="fit-content"
           alignItems="center"
           shrink="0"
@@ -83,7 +81,6 @@ export default function ProductCard(props) {
           <Rating
             display="flex"
             gap="8px"
-            direction="row"
             width="fit-content"
             alignItems="center"
             shrink="0"
@@ -115,7 +112,6 @@ export default function ProductCard(props) {
         </Flex>
         <Flex
           gap="16px"
-          direction="row"
           width="fit-content"
           alignItems="center"
           shrink="0"
@@ -126,7 +122,6 @@ export default function ProductCard(props) {
           <Badge
             display="flex"
             gap="10px"
-            direction="column"
             width="fit-content"
             justifyContent="flex-start"
             alignItems="center"
@@ -141,6 +136,7 @@ export default function ProductCard(props) {
             fontWeight="400"
             color="rgba(13,26,38,1)"
             textAlign="left"
+            direction="column"
             size="small"
             variation="default"
             children="New"
@@ -149,7 +145,6 @@ export default function ProductCard(props) {
           <Badge
             display="flex"
             gap="10px"
-            direction="column"
             width="fit-content"
             justifyContent="flex-start"
             alignItems="center"
@@ -164,6 +159,7 @@ export default function ProductCard(props) {
             fontWeight="400"
             color="rgba(13,26,38,1)"
             textAlign="left"
+            direction="column"
             size="small"
             variation="default"
             children="Classic"
@@ -172,7 +168,6 @@ export default function ProductCard(props) {
           <Badge
             display="flex"
             gap="10px"
-            direction="column"
             width="fit-content"
             justifyContent="flex-start"
             alignItems="center"
@@ -187,6 +182,7 @@ export default function ProductCard(props) {
             fontWeight="400"
             color="rgba(13,26,38,1)"
             textAlign="left"
+            direction="column"
             size="small"
             variation="default"
             children="Modern"
@@ -215,7 +211,6 @@ export default function ProductCard(props) {
         ></Text>
         <Flex
           gap="16px"
-          direction="row"
           alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
@@ -268,7 +263,6 @@ export default function ProductCard(props) {
         ></Divider>
         <Flex
           gap="32px"
-          direction="row"
           width="fit-content"
           alignItems="flex-start"
           shrink="0"
@@ -278,7 +272,6 @@ export default function ProductCard(props) {
         >
           <Flex
             gap="16px"
-            direction="row"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -341,7 +334,6 @@ export default function ProductCard(props) {
           </Flex>
           <Flex
             gap="16px"
-            direction="row"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -404,7 +396,6 @@ export default function ProductCard(props) {
           </Flex>
           <Flex
             gap="16px"
-            direction="row"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"

@@ -57,7 +57,6 @@ export default function HeroLayout1(props) {
   return (
     <Flex
       gap="0"
-      direction="row"
       width="1440px"
       height="500px"
       justifyContent="center"
@@ -174,7 +173,6 @@ export default function HeroLayout1(props) {
           <Button
             display="flex"
             gap="0"
-            direction="row"
             width="fit-content"
             justifyContent="center"
             alignItems="center"

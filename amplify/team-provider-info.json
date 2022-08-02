@@ -1,15 +1,15 @@
 {
-  "dev": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-solanasummercamp-dev-192023-authRole",
-      "UnauthRoleArn": "arn:aws:iam::398220751820:role/amplify-solanasummercamp-dev-192023-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::398220751820:role/amplify-solanasummercamp-dev-192023-authRole",
+      "AuthRoleName": "amplify-solme-staging-173700-authRole",
+      "UnauthRoleArn": "arn:aws:iam::398220751820:role/amplify-solme-staging-173700-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::398220751820:role/amplify-solme-staging-173700-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-solanasummercamp-dev-192023-deployment",
-      "UnauthRoleName": "amplify-solanasummercamp-dev-192023-unauthRole",
-      "StackName": "amplify-solanasummercamp-dev-192023",
-      "StackId": "arn:aws:cloudformation:eu-west-1:398220751820:stack/amplify-solanasummercamp-dev-192023/ca6bb320-0921-11ed-9357-028a73f22a49",
-      "AmplifyAppId": "d2ohq56c7ffy99"
+      "DeploymentBucketName": "amplify-solme-staging-173700-deployment",
+      "UnauthRoleName": "amplify-solme-staging-173700-unauthRole",
+      "StackName": "amplify-solme-staging-173700",
+      "StackId": "arn:aws:cloudformation:eu-west-1:398220751820:stack/amplify-solme-staging-173700/8c6892d0-11c0-11ed-80f6-02b152594da9",
+      "AmplifyAppId": "d2ot1causjldfp"
     }
   }
 }

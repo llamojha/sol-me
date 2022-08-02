@@ -9,8 +9,7 @@ import { Users } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type ProfileDetailProps = React.PropsWithChildren<Partial<FlexProps> & {
-    profileId?: String;
-    users?: Users;
+    user?: Users;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
