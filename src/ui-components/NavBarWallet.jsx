@@ -11,7 +11,14 @@ import {
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
 } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
+import {
+  Button,
+  Flex,
+  Image,
+  SearchField,
+  Text,
+  View,
+} from "@aws-amplify/ui-react";
 export default function NavBarWallet(props) {
   const { overrides: overridesProp, ...rest } = props;
   const variants = [
@@ -21,12 +28,27 @@ export default function NavBarWallet(props) {
         LogoInFrame: {},
         LogoText: {},
         LogoFrame: {},
+        SearchField: {},
         Button: {},
         SearchBar: {},
         SolanaWallet: {},
         NavBarWallet: {},
       },
       variantValues: { property1: "Default" },
+    },
+    {
+      overrides: {
+        LogoImage: {},
+        LogoInFrame: {},
+        LogoText: {},
+        LogoFrame: {},
+        SearchField: {},
+        Button: {},
+        SearchBar: { boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" },
+        SolanaWallet: {},
+        NavBarWallet: {},
+      },
+      variantValues: { property1: "Variant2" },
     },
   ];
   const overrides = mergeVariantsAndOverrides(
@@ -101,16 +123,31 @@ export default function NavBarWallet(props) {
         basis="976px"
         height="48px"
         position="relative"
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "SearchBar")}
       >
+        <SearchField
+          display="flex"
+          direction="column"
+          width="300px"
+          justifyContent="center"
+          shrink="0"
+          height="46px"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          placeholder="Placeholder"
+          size="large"
+          isDisabled={false}
+          labelHidden={true}
+          variation="default"
+          {...getOverrideProps(overrides, "SearchField")}
+        ></SearchField>
         <Button
           display="flex"
           gap="0"
           width="fit-content"
           height="48px"
-          justifyContent="center"
+          justifyContent="flex-end"
           alignItems="center"
           shrink="0"
           position="relative"

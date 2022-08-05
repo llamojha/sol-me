@@ -58,22 +58,6 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
                 }
             },
             "syncable": true,
@@ -81,6 +65,17 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
+                    "properties": {
+                        "mutations": {
+                            "create": "createUser",
+                            "delete": null,
+                            "update": "UpdateUser"
+                        },
+                        "timestamps": null
+                    }
+                },
+                {
+                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -104,5 +99,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4891a660ba7e590b11980c008a0c9c8c"
+    "version": "2796f4c8baddfd6c41a8a033f9ac5999"
 };

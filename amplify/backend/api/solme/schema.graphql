@@ -1,4 +1,11 @@
-type Users @model @searchable @auth(rules: [{allow: public}]) {
+type Users
+  @model(
+    mutations: {create: "createUser", delete: null, update: "UpdateUser"}
+    timestamps: null
+  )
+  @searchable
+  @auth(rules: [{allow: public}])
+{
   id: ID!
   WalletAddress: String!
   Username: String

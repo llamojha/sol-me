@@ -8,7 +8,7 @@ import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type NavBarWalletProps = React.PropsWithChildren<Partial<FlexProps> & {
-    property1?: "Default";
+    property1?: "Default" | "Variant2";
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
