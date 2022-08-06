@@ -13,7 +13,7 @@ export const schema = {
                 "WalletAddress": {
                     "name": "WalletAddress",
                     "isArray": false,
-                    "type": "String",
+                    "type": "ID",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -21,7 +21,7 @@ export const schema = {
                     "name": "Username",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "ProfileImage": {
@@ -84,6 +84,35 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "id",
+                            "Username"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byWallet",
+                        "queryField": "UsersByWallet",
+                        "fields": [
+                            "WalletAddress"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byUsername",
+                        "queryField": "UsersByUsername",
+                        "fields": [
+                            "Username"
+                        ]
+                    }
+                },
+                {
                     "type": "auth",
                     "properties": {
                         "rules": [
@@ -104,5 +133,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4891a660ba7e590b11980c008a0c9c8c"
+    "version": "d81b2244e7a4106f7a4408108a29516d"
 };
