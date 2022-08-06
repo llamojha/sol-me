@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const getUsers = /* GraphQL */ `
-  query GetUsers($id: ID!) {
-    getUsers(id: $id) {
+  query GetUsers($id: ID!, $Username: String!) {
+    getUsers(id: $id, Username: $Username) {
       id
       WalletAddress
       Username
@@ -13,6 +13,8 @@ export const getUsers = /* GraphQL */ `
       Description
       DonationDescription
       DonationTitle
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
@@ -21,11 +23,21 @@ export const getUsers = /* GraphQL */ `
 `;
 export const listUsers = /* GraphQL */ `
   query ListUsers(
+    $id: ID
+    $Username: ModelStringKeyConditionInput
     $filter: ModelUsersFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(
+      id: $id
+      Username: $Username
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
         id
         WalletAddress
@@ -35,6 +47,8 @@ export const listUsers = /* GraphQL */ `
         Description
         DonationDescription
         DonationTitle
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -66,6 +80,8 @@ export const syncUsers = /* GraphQL */ `
         Description
         DonationDescription
         DonationTitle
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -75,22 +91,20 @@ export const syncUsers = /* GraphQL */ `
     }
   }
 `;
-export const searchUsers = /* GraphQL */ `
-  query SearchUsers(
-    $filter: SearchableUsersFilterInput
-    $sort: [SearchableUsersSortInput]
+export const usersByWallet = /* GraphQL */ `
+  query UsersByWallet(
+    $WalletAddress: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUsersFilterInput
     $limit: Int
     $nextToken: String
-    $from: Int
-    $aggregates: [SearchableUsersAggregationInput]
   ) {
-    searchUsers(
+    UsersByWallet(
+      WalletAddress: $WalletAddress
+      sortDirection: $sortDirection
       filter: $filter
-      sort: $sort
       limit: $limit
       nextToken: $nextToken
-      from: $from
-      aggregates: $aggregates
     ) {
       items {
         id
@@ -101,26 +115,49 @@ export const searchUsers = /* GraphQL */ `
         Description
         DonationDescription
         DonationTitle
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
       }
       nextToken
-      total
-      aggregateItems {
-        name
-        result {
-          ... on SearchableAggregateScalarResult {
-            value
-          }
-          ... on SearchableAggregateBucketResult {
-            buckets {
-              key
-              doc_count
-            }
-          }
-        }
+      startedAt
+    }
+  }
+`;
+export const usersByUsername = /* GraphQL */ `
+  query UsersByUsername(
+    $Username: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUsersFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    UsersByUsername(
+      Username: $Username
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        WalletAddress
+        Username
+        ProfileImage
+        ProfileBanner
+        Description
+        DonationDescription
+        DonationTitle
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
+      nextToken
+      startedAt
     }
   }
 `;

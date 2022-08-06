@@ -13,7 +13,7 @@ export const schema = {
                 "WalletAddress": {
                     "name": "WalletAddress",
                     "isArray": false,
-                    "type": "String",
+                    "type": "ID",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -21,7 +21,7 @@ export const schema = {
                     "name": "Username",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "ProfileImage": {
@@ -58,6 +58,22 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
@@ -65,18 +81,36 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
                     "properties": {
-                        "mutations": {
-                            "create": "createUser",
-                            "delete": null,
-                            "update": "UpdateUser"
-                        },
-                        "timestamps": null
+                        "fields": [
+                            "id",
+                            "Username"
+                        ]
                     }
                 },
                 {
-                    "type": "searchable",
-                    "properties": {}
+                    "type": "key",
+                    "properties": {
+                        "name": "byWallet",
+                        "queryField": "UsersByWallet",
+                        "fields": [
+                            "WalletAddress"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byUsername",
+                        "queryField": "UsersByUsername",
+                        "fields": [
+                            "Username"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -99,5 +133,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "2796f4c8baddfd6c41a8a033f9ac5999"
+    "version": "d81b2244e7a4106f7a4408108a29516d"
 };

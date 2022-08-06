@@ -1,14 +1,10 @@
 type Users
-  @model(
-    mutations: {create: "createUser", delete: null, update: "UpdateUser"}
-    timestamps: null
-  )
-  @searchable
+  @model
   @auth(rules: [{allow: public}])
 {
-  id: ID!
-  WalletAddress: String!
-  Username: String
+  id: ID! @primaryKey(sortKeyFields: ["Username"])
+  WalletAddress: ID! @index(name: "byWallet", queryField: "UsersByWallet")
+  Username: String! @index(name: "byUsername", queryField: "UsersByUsername")
   ProfileImage: AWSURL
   ProfileBanner: AWSURL
   Description: String
