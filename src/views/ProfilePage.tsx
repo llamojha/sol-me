@@ -8,21 +8,26 @@ import { Users } from '../models'
 
 const ProfilePage: FC = (props) => {
   const { profileId } = useParams();
-  const [users, setUsers] = useState<Array<Users>>([]);
 
-  const getUsers = async () => {
-    const data: Users[] = await DataStore.query(Users);
-    setUsers(data);
+  const [user, setUser] = useState<Users>();
+
+  const getUser = async () => {
+    if(profileId !== null && profileId !== undefined){
+      const data = (await DataStore.query(Users)).filter(u => u.WalletAddress === profileId.toString())[0];
+      setUser(data);
+    } else {
+      console.log("No profileId found");
+      // TODO: Redirect to home page or 404 page
+    }
   }
 
   useEffect(() => {
-    getUsers()
-  }, [])
-  let randomUser: Users = users[Math.floor(Math.random()*users.length)];
+    getUser()
+  })
 
 return (
   <div className="ProfilePage">
-      <ProfileDetail user={randomUser}  />
+      <ProfileDetail user={user}  />
   </div>
   );
 }
