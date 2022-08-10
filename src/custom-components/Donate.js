@@ -3,6 +3,7 @@ import { Keypair, Transaction } from "@solana/web3.js";
 import { findReference, FindReferenceError } from "@solana/pay";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { InfinitySpin } from "react-loader-spinner";
+import createTransaction from "../functions/createTransaction";
 
 const STATUS = {
   Initial: "Initial",
@@ -13,10 +14,12 @@ const STATUS = {
 export default function Donate({ PageID }) {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
+
   const orderID = useMemo(() => Keypair.generate().publicKey, []); // Public key used to identify the order
 
   const [loading, setLoading] = useState(false); // Loading state of all above
   const [status, setStatus] = useState(STATUS.Initial); // Tracking transaction status
+
 
   const order = useMemo(
     () => ({
@@ -30,16 +33,8 @@ export default function Donate({ PageID }) {
   // Fetch the transaction object from the server (done to avoid tampering)
   const processTransaction = async () => {
     setLoading(true);
-    const txResponse = await fetch("../api/createTransaction", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(order),
-    });
-    const txData = await txResponse.json();
-
-    const tx = Transaction.from(Buffer.from(txData.transaction, "base64"));
+    const txResponse = await createTransaction(PageID, publicKey, orderID ); //TODO: Move Transaction to ServerSide
+    const tx = Transaction.from(Buffer.from(txResponse, "base64"));
     console.log("Tx data is", tx);
     // Attempt to send the transaction to the network
     try {
@@ -67,7 +62,8 @@ export default function Donate({ PageID }) {
 
   return (
     <div>
-        <button disabled={loading} className="buy-button" onClick={processTransaction}>
+        <button disabled={loading} onClick={processTransaction}
+        class="amplify-button amplify-field-group__control amplify-button--primary amplify-button--default">
           Sol Me
         </button>
     </div>

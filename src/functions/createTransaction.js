@@ -9,38 +9,14 @@ import {
 } from "@solana/web3.js";
 import BigNumber from "bignumber.js";
 
-// Make sure you replace this with your wallet address!
-const sellerAddress = 'DEX13MVXjCSKCNVQe7AKPDMFRrsrHshXVHpGH4FmjxSU'
-const sellerPublicKey = new PublicKey(sellerAddress);
-const DonationPrice = 3;
-const createTransaction = async (req, res) => {
+
+const createTransaction = async (pageID, userID, orderID) => {
   try {
-    // Extract the transaction data from the request body
-    const { PageWallet, UserWallet, orderID } = req.body;
-
-    // If we don't have something we need, stop!
-    if (!UserWallet) {
-      return res.status(400).json({
-        message: "Missing User address",
-      });
-    }
-
-    if (!PageWallet) {
-      return res.status(400).json({
-        message: "Missing User address",
-      });
-    }
-
-    if (!orderID) {
-      return res.status(400).json({
-        message: "Missing order ID",
-      });
-    }
-
-
     // Convert our price to the correct format
+    const DonationPrice = 0.3; // TODO: Make this a parameter
     const bigAmount = BigNumber(DonationPrice);
-    const buyerPublicKey = new PublicKey(buyer);
+    const buyerPublicKey = new PublicKey(userID);
+    const sellerPublicKey = new PublicKey(pageID);
     const network = WalletAdapterNetwork.Devnet;
     const endpoint = clusterApiUrl(network);
     const connection = new Connection(endpoint);
@@ -80,21 +56,12 @@ const createTransaction = async (req, res) => {
     });
     const base64 = serializedTransaction.toString("base64");
 
-    res.status(200).json({
-      transaction: base64,
-    });
+    return JSON.stringify(base64);
+
   } catch (error) {
     console.error(error);
-
-    res.status(500).json({ error: "error creating tx" });
     return;
   }
 }
 
-export default function handler(req, res) {
-  if (req.method === "POST") {
-    createTransaction(req, res);
-  } else {
-    res.status(405).end();
-  }
-}
+export default createTransaction;
