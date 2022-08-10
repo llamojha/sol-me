@@ -11,7 +11,7 @@ import { Users } from '../models'
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-const LandingPage: FC = () => {
+const LandingPage: FC = (props) => {
   // State
   const [walletAddress, setWalletAddress] = useState(null);
   const [users, setUsers] = useState<Array<Users>>([]);
@@ -26,7 +26,7 @@ const LandingPage: FC = () => {
   }
 
   const { connection } = useConnection();
-  const { publicKey, sendTransaction } = useWallet();
+  const { publicKey } = useWallet();
 
   const buttonFrameOverride = {
     "ButtonFrame": {

@@ -53,7 +53,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
       <ConnectionProvider endpoint={endpoint}>
-          <WalletProvider wallets={wallets}>
+          <WalletProvider wallets={wallets} autoConnect>
               <WalletModalProvider>{children}</WalletModalProvider>
           </WalletProvider>
       </ConnectionProvider>
@@ -68,7 +68,7 @@ const Content: FC = () => {
         <Router>
           <Routes>
             <Route path='/' element={<LandingPage/>} />
-            <Route path='/:profileId' element={<ProfilePage/>} />
+            <Route path='/:pageId' element={<ProfilePage/>} />
           </Routes>
         </Router>
       </main>

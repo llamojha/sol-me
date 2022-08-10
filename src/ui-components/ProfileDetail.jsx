@@ -7,7 +7,7 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Divider, Flex, Image, Text } from "@aws-amplify/ui-react";
+import { Divider, Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function ProfileDetail(props) {
   const { user, overrides, ...rest } = props;
   return (
@@ -219,30 +219,14 @@ export default function ProfileDetail(props) {
               {...getOverrideProps(overrides, "XX Coffees")}
             ></Text>
           </Flex>
-          <Flex
-            padding="0px 0px 0px 0px"
+          <View
             width="371px"
             height="40px"
             shrink="0"
             position="relative"
-            {...getOverrideProps(overrides, "Group 27")}
-          >
-            <Button
-              display="flex"
-              gap="0"
-              position="absolute"
-              top="0px"
-              left="0px"
-              width="371px"
-              justifyContent="center"
-              alignItems="center"
-              size="default"
-              isDisabled={false}
-              variation="primary"
-              children="SolanaPay"
-              {...getOverrideProps(overrides, "SolanaPay")}
-            ></Button>
-          </Flex>
+            padding="0px 0px 0px 0px"
+            {...getOverrideProps(overrides, "SolanaPayFrame")}
+          ></View>
         </Flex>
         <Divider
           height="1098px"
