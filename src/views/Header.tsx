@@ -16,8 +16,8 @@ import { Users } from '../models'
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 
-
 const Header: FC = (props) => {
+
   const { publicKey } = useWallet();
 
   const goToProfile = (profileId: string) => {
@@ -47,7 +47,6 @@ const Header: FC = (props) => {
         })
       );
 
-
       console.log("New User created!");
     } catch (error) {
       console.log("Error saving user", error);
@@ -64,7 +63,6 @@ const Header: FC = (props) => {
     "Button": {
       onClick: () => register() // TODO: add logic if wallet not connected
     },
-
   }
 
 return (
