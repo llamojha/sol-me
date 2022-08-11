@@ -16,10 +16,14 @@ const ProfilePage: FC = (props) => {
   const getUser = async () => {
     if(pageId !== null && pageId !== undefined){
       const data = (await DataStore.query(Users)).filter(u => u.WalletAddress === pageId.toString())[0];
-      setUser(data);
+      console.log(data);
+      if(data === undefined){
+        document.location.href = "/404";
+      } else {
+        setUser(data);
+      }
     } else {
       console.log("No pageId found");
-      // TODO: Redirect to home page or 404 page
     }
   }
 

@@ -11,7 +11,6 @@ import logo from '../logo.svg';
 
 import { DataStore } from 'aws-amplify'
 import { Users } from '../models'
-import { text } from 'stream/consumers';
 import { PublicKey } from '@solana/web3.js';
 
 
@@ -80,7 +79,6 @@ const Header: FC = (props) => {
     const existingUser = (await DataStore.query(Users)).filter(u => u.WalletAddress === publicKey.toString());;
     // If User Already Exists -> Go to Profile Page on Click
     if(existingUser.length > 0){
-      console.log("User already registered");
       setTextValue('Profile Page');
     }
   }
