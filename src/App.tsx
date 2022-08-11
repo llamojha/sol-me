@@ -20,6 +20,7 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import LandingPage from './views/LandingPage';
 import ProfilePage from './views/ProfilePage';
 import Header from './views/Header';
+import Page404 from './views/Page404';
 
 const App: FC = () => {
   return (
@@ -69,6 +70,7 @@ const Content: FC = () => {
           <Routes>
             <Route path='/' element={<LandingPage/>} />
             <Route path='/:pageId' element={<ProfilePage/>} />
+            <Route path='/404' element={<Page404/>} />
           </Routes>
         </Router>
       </main>

@@ -11,6 +11,8 @@ import logo from '../logo.svg';
 
 import { DataStore } from 'aws-amplify'
 import { Users } from '../models'
+import { text } from 'stream/consumers';
+import { PublicKey } from '@solana/web3.js';
 
 
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -18,6 +20,7 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 const Header: FC = (props) => {
 
+  const [textValue, setTextValue] = useState('Sign Up');
   const { publicKey } = useWallet();
 
   const goToProfile = (profileId: string) => {
@@ -31,23 +34,30 @@ const Header: FC = (props) => {
     }
     try {
       const existingUser = (await DataStore.query(Users)).filter(u => u.WalletAddress === publicKey.toString());;
+      // If User Already Exists -> Go to Profile Page on Click
       if(existingUser.length > 0){
         console.log("User already registered");
-        return;
-      }
-      await DataStore.save(
-        new Users({
-          WalletAddress: publicKey.toString(),
-          Username: publicKey.toString(),
-          ProfileImage: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
-          ProfileBanner: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
-          Description: "This user is from the API",
-          DonationDescription: "This user is from the API",
-          DonationTitle: "This user is from the API"
-        })
-      );
+        setTextValue('Profile Page');
+        goToProfile(publicKey.toString());
+      } else {
+      // Else Sign Up the User
+        await DataStore.save(
+          new Users({
+            WalletAddress: publicKey.toString(),
+            Username: publicKey.toString(),
+            ProfileImage: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
+            ProfileBanner: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
+            Description: "This user is from the API",
+            DonationDescription: "This user is from the API",
+            DonationTitle: "This user is from the API"
+          })
+        );
 
-      console.log("New User created!");
+        console.log("New User created!");
+        setTextValue('Profile Page');
+        alert(`User Created`);
+      }
+
     } catch (error) {
       console.log("Error saving user", error);
     }
@@ -61,9 +71,25 @@ const Header: FC = (props) => {
       src: logo
     },
     "Button": {
-      onClick: () => register() // TODO: add logic if wallet not connected
+      onClick: () => register(), // TODO: add logic if wallet not connected
+      children: textValue
     },
   }
+
+  const checkUser = async (publicKey: PublicKey) => {
+    const existingUser = (await DataStore.query(Users)).filter(u => u.WalletAddress === publicKey.toString());;
+    // If User Already Exists -> Go to Profile Page on Click
+    if(existingUser.length > 0){
+      console.log("User already registered");
+      setTextValue('Profile Page');
+    }
+  }
+  // Check if Wallet is connected
+  useEffect(() => {
+    if(publicKey !== null){
+      checkUser(publicKey);
+    }
+  }, [publicKey]);
 
 return (
   <div className="Header">
