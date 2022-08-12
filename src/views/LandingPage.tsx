@@ -5,15 +5,13 @@ import { DataStore } from 'aws-amplify'
 import { HeroLayout3, Features4x1 } from '../ui-components'
 
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
 import { Users } from '../models'
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-const LandingPage: FC = () => {
+const LandingPage: FC = (props) => {
   // State
-  const [walletAddress, setWalletAddress] = useState(null);
   const [users, setUsers] = useState<Array<Users>>([]);
 
   const getUsers = async () => {
@@ -21,12 +19,6 @@ const LandingPage: FC = () => {
     setUsers(data);
   }
 
-  const goToProfile = (profileId: string) => {
-    document.location.href = profileId;
-  }
-
-  const { connection } = useConnection();
-  const { publicKey, sendTransaction } = useWallet();
 
   const buttonFrameOverride = {
     "ButtonFrame": {
