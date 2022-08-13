@@ -1,5 +1,6 @@
 type Users
   @model
+  @searchable
   @auth(rules: [{allow: public}])
 {
   id: ID! @primaryKey(sortKeyFields: ["Username"])

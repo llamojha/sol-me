@@ -17,6 +17,7 @@ export default function HeroLayout2(props) {
       height="858px"
       position="relative"
       padding="0px 0px 0px 0px"
+      backgroundColor="rgba(255,255,255,1)"
       {...rest}
       {...getOverrideProps(overrides, "HeroLayout2")}
     >

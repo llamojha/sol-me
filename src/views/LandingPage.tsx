@@ -1,4 +1,4 @@
-import './LandingPage.css';
+import './Amplify.css';
 import React, { FC, useState, useEffect } from 'react';
 import { DataStore } from 'aws-amplify'
 

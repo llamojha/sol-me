@@ -1,11 +1,14 @@
-import './LandingPage.css';
+import './Amplify.css';
 import React, { FC, useState, useEffect } from 'react';
 import { DataStore } from 'aws-amplify'
 import { useParams } from 'react-router-dom';
-import { ProfileDetail } from '../ui-components';
+import { ProfileDetailVariants } from '../ui-components';
 import { useWallet } from '@solana/wallet-adapter-react';
 import Donate from '../custom-components/Donate';
 import { Users } from '../models'
+import { useBreakpointValue } from '@aws-amplify/ui-react';
+
+type Variant = "Small" | "Default";
 
 const ProfilePage: FC = (props) => {
   const { publicKey } = useWallet();
@@ -13,10 +16,15 @@ const ProfilePage: FC = (props) => {
   //const { publicKey } = useWallet();
   const [user, setUser] = useState<Users>();
 
+  const variant = useBreakpointValue({
+    base: "Small",
+    small: "Small",
+    medium: "Default",
+  });
+
   const getUser = async () => {
     if(pageId !== null && pageId !== undefined){
       const data = (await DataStore.query(Users)).filter(u => u.WalletAddress === pageId.toString())[0];
-      console.log(data);
       if(data === undefined){
         document.location.href = "/404";
       } else {
@@ -46,7 +54,7 @@ const ProfilePage: FC = (props) => {
   } else {
     return (
       <div className="ProfilePage">
-          <ProfileDetail user={user} overrides={override} />
+          <ProfileDetailVariants variant={variant as Variant} user={user} overrides={override}  />
       </div>
       );
   }

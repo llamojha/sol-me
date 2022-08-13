@@ -57,7 +57,7 @@ export default function HeroLayout3(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={`${"This the the landing page for the solana summer camp project"}${""}`}
-          {...getOverrideProps(overrides, "LOREM IPSUM")}
+          {...getOverrideProps(overrides, "Title")}
         ></Text>
         <Flex
           gap="16px"
@@ -86,10 +86,7 @@ export default function HeroLayout3(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="SOL-ME Platform"
-            {...getOverrideProps(
-              overrides,
-              "Ut enim ad minim veniam quis nostrud"
-            )}
+            {...getOverrideProps(overrides, "SubTitle")}
           ></Text>
           <Text
             fontFamily="Inter"
@@ -109,10 +106,7 @@ export default function HeroLayout3(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Description for the Project"
-            {...getOverrideProps(
-              overrides,
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-            )}
+            {...getOverrideProps(overrides, "Body")}
           ></Text>
         </Flex>
         <View

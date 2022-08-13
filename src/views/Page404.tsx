@@ -1,3 +1,5 @@
+import './Amplify.css';
+
 import React, { FC } from 'react';
 
 import { HeroLayout3 } from '../ui-components'
