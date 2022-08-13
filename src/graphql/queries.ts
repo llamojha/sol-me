@@ -161,3 +161,54 @@ export const usersByUsername = /* GraphQL */ `
     }
   }
 `;
+export const searchUsers = /* GraphQL */ `
+  query SearchUsers(
+    $filter: SearchableUsersFilterInput
+    $sort: [SearchableUsersSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableUsersAggregationInput]
+  ) {
+    searchUsers(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        WalletAddress
+        Username
+        ProfileImage
+        ProfileBanner
+        Description
+        DonationDescription
+        DonationTitle
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;

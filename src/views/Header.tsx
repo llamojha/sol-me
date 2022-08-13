@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { API } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 
 import { useParams } from 'react-router-dom';
 import { NavBarWallet } from '../ui-components'
@@ -12,6 +12,8 @@ import logo from '../logo.svg';
 import { DataStore } from 'aws-amplify'
 import { Users } from '../models'
 import { PublicKey } from '@solana/web3.js';
+import { SearchField } from '@aws-amplify/ui-react';
+import { searchUsers } from '../graphql/queries';
 
 
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -21,6 +23,17 @@ const Header: FC = (props) => {
 
   const [textValue, setTextValue] = useState('Sign Up');
   const { publicKey } = useWallet();
+
+  const searchPosts = async (event: { (event: { target: { value: any; }; }): { target: { value: any; }; }; target?: any; }) => {
+    console.log(event);
+    const query = event.target.value;
+    if (query === '') return;
+    const res = await API.graphql(graphqlOperation(searchUsers, {
+      filter: { content: { matchPhrase: query } },
+      limit: 20,
+    }));
+    console.log(res);
+  }
 
   const goToProfile = (profileId: string) => {
     document.location.href = profileId;
@@ -73,6 +86,9 @@ const Header: FC = (props) => {
       onClick: () => register(), // TODO: add logic if wallet not connected
       children: textValue
     },
+    "SearchField": {
+      onChange: () => searchPosts((event: { target: { value: any; }; }) => event),
+    }
   }
 
   const checkUser = async (publicKey: PublicKey) => {
