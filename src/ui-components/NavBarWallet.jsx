@@ -56,6 +56,7 @@ export default function NavBarWallet(props) {
       padding="25px 32px 25px 32px"
       backgroundColor="rgba(255,255,255,1)"
       width="100%"
+      backgroundImage="linear-gradient(90deg, hsl(331, 41%, 66%),hsl(332, 54%, 43%))"
       {...rest}
       {...getOverrideProps(overrides, "NavBarWallet")}
     >

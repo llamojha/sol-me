@@ -10,6 +10,7 @@ export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as ProfileDetail } from "./ProfileDetail";
 export { default as MarketingPricing } from "./MarketingPricing";
 export { default as Features4x1 } from "./Features4x1";
+export { default as HeroLayoutVariant } from "./HeroLayoutVariant";
 export { default as ItemCard } from "./ItemCard";
 export { default as FormCheckout } from "./FormCheckout";
 export { default as StandardCard } from "./StandardCard";
