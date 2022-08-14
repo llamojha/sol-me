@@ -39,17 +39,13 @@ export default function HeroLayoutVariant(props) {
         Body: { height: "216px" },
         "Main Body": {
           padding: "78px 0px 24px 0px",
-          height: "274px",
+          height: "154px",
           grow: "1",
-          basis: "274px",
+          basis: "154px",
         },
         ButtonFrame: {},
-        "Type Lock Up": { height: "408px", grow: "1", basis: "408px" },
-        HeroLayoutVariant: {
-          width: "480px",
-          height: "480px",
-          padding: "36px 24px 36px 24px",
-        },
+        "Type Lock Up": { height: "408px" },
+        HeroLayoutVariant: { padding: "36px 24px 36px 24px" },
       },
       variantValues: { variant: "Small" },
     },
@@ -62,14 +58,13 @@ export default function HeroLayoutVariant(props) {
     <Flex
       gap="10px"
       direction="column"
-      width="100%"
-      height="548px"
       justifyContent="center"
       alignItems="center"
       overflow="hidden"
       position="relative"
       padding="160px 160px 160px 160px"
       backgroundColor="rgba(0,0,0,1)"
+      width="100%"
       backgroundImage="linear-gradient(#AA336A,#4bc8b4)"
       {...rest}
       {...getOverrideProps(overrides, "HeroLayoutVariant")}
@@ -101,7 +96,7 @@ export default function HeroLayoutVariant(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Wellcome to Sol Me ☀️"
+          children="Welcome to Sol Me ☀️"
           {...getOverrideProps(overrides, "Title")}
         ></Text>
         <Flex

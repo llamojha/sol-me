@@ -1,7 +1,7 @@
 import './Amplify.css';
 import React, { FC, useState, useEffect } from 'react';
 import { DataStore } from 'aws-amplify'
-import { HeroLayoutVariant, Features4x1 } from '../ui-components'
+import { HeroLayoutVariant, FeaturesVariant } from '../ui-components'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { Users } from '../models'
 import { useBreakpointValue } from '@aws-amplify/ui-react';
@@ -43,14 +43,25 @@ const LandingPage: FC = (props) => {
   return (
       <div className="LandingPage">
         <HeroLayoutVariant variant={variant as Variant} />
-        <Features4x1
+      </div>
+  );
+
+  /* Enable Feature Profiles once we get them
+
+    return (
+      <div className="LandingPage">
+        <HeroLayoutVariant variant={variant as Variant} />
+        <FeaturesVariant
           user1={user1}
           user2={user2}
           user3={user3}
           user4={user4}
+          variant={variant as Variant}
         />
       </div>
   );
+
+  */
 };
 
 export default LandingPage;
