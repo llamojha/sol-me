@@ -131,12 +131,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766689")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59000015258789px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59000015258789,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -198,12 +198,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766693")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59000015258789px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59000015258789,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -265,12 +265,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766697")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59000015258789px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59000015258789,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -410,12 +410,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766723")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.589996337890625px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.589996337890625,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -477,12 +477,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766727")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.589996337890625px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.589996337890625,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -544,12 +544,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766731")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.589996337890625px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.589996337890625,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -689,12 +689,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766740")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59002685546875px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59002685546875,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -756,12 +756,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766744")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59002685546875px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59002685546875,
                   height: 13.41015625,
                 }}
                 paths={[
@@ -823,12 +823,12 @@ export default function MarketingPricing(props) {
               {...getOverrideProps(overrides, "Icon29766748")}
             >
               <Icon
-                width="17.590087890625px"
+                width="17.59002685546875px"
                 height="13.41015625px"
                 viewBox={{
                   minX: 0,
                   minY: 0,
-                  width: 17.590087890625,
+                  width: 17.59002685546875,
                   height: 13.41015625,
                 }}
                 paths={[

@@ -1,4 +1,17 @@
 {
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-solme-main-215314-authRole",
+      "UnauthRoleArn": "arn:aws:iam::398220751820:role/amplify-solme-main-215314-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::398220751820:role/amplify-solme-main-215314-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-solme-main-215314-deployment",
+      "UnauthRoleName": "amplify-solme-main-215314-unauthRole",
+      "StackName": "amplify-solme-main-215314",
+      "StackId": "arn:aws:cloudformation:eu-west-1:398220751820:stack/amplify-solme-main-215314/8285c380-12ad-11ed-8da5-0a0d734c29b3",
+      "AmplifyAppId": "d2ot1causjldfp"
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplify440bc7bfdc814-staging-192416-authRole",
