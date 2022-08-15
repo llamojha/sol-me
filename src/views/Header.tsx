@@ -7,7 +7,7 @@ import { NavBarWallet } from '../ui-components'
 
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import logo from '../logo.svg';
+import logo from '../logo.png';
 
 import { DataStore } from 'aws-amplify'
 import { Users } from '../models'
