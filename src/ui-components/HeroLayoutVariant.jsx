@@ -6,34 +6,76 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  getOverridesFromVariants,
+  mergeVariantsAndOverrides,
+} from "@aws-amplify/ui-react/internal";
 import { Flex, Text, View } from "@aws-amplify/ui-react";
-export default function HeroLayout3(props) {
-  const { overrides, ...rest } = props;
+export default function HeroLayoutVariant(props) {
+  const { users, overrides: overridesProp, ...rest } = props;
+  const variants = [
+    {
+      overrides: {
+        Title: {},
+        SubTitle: {},
+        Body: {},
+        "Main Body": {},
+        ButtonFrame: {},
+        "Type Lock Up": {},
+        HeroLayoutVariant: {},
+      },
+      variantValues: { variant: "Default" },
+    },
+    {
+      overrides: {
+        Title: {
+          fontSize: "40px",
+          lineHeight: "40px",
+          alignSelf: "stretch",
+          objectFit: "cover",
+        },
+        SubTitle: { fontSize: "20px", height: "90px" },
+        Body: { height: "216px" },
+        "Main Body": {
+          padding: "78px 0px 24px 0px",
+          height: "154px",
+          grow: "1",
+          basis: "154px",
+        },
+        ButtonFrame: {},
+        "Type Lock Up": { height: "408px" },
+        HeroLayoutVariant: { padding: "36px 24px 36px 24px" },
+      },
+      variantValues: { variant: "Small" },
+    },
+  ];
+  const overrides = mergeVariantsAndOverrides(
+    getOverridesFromVariants(variants, props),
+    overridesProp || {}
+  );
   return (
     <Flex
       gap="10px"
       direction="column"
-      width="100%"
-      height="548px"
       justifyContent="center"
       alignItems="center"
       overflow="hidden"
       position="relative"
-      padding="160px 240px 160px 240px"
+      padding="160px 160px 160px 160px"
       backgroundColor="rgba(0,0,0,1)"
-      backgroundImage="linear-gradient(#9945FF, #14F195)"
+      width="100%"
+      backgroundImage="linear-gradient(#AA336A,#4bc8b4)"
       {...rest}
-      {...getOverrideProps(overrides, "HeroLayout3")}
+      {...getOverrideProps(overrides, "HeroLayoutVariant")}
     >
       <Flex
         gap="24px"
         direction="column"
-        height="228px"
+        height="360px"
         justifyContent="center"
         alignItems="center"
-        grow="1"
-        basis="228px"
+        shrink="0"
         alignSelf="stretch"
         objectFit="cover"
         position="relative"
@@ -42,26 +84,26 @@ export default function HeroLayout3(props) {
       >
         <Text
           fontFamily="Inter"
-          fontSize="16px"
+          fontSize="48px"
           fontWeight="700"
           color="rgba(255,255,255,1)"
           lineHeight="24px"
           textAlign="center"
           display="flex"
           direction="column"
-          justifyContent="flex-start"
+          justifyContent="center"
           shrink="0"
-          alignSelf="stretch"
-          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={`${"This the the landing page for the solana summer camp project"}${""}`}
+          children="Welcome to Sol Me ☀️"
           {...getOverrideProps(overrides, "Title")}
         ></Text>
         <Flex
           gap="16px"
           direction="column"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
           alignSelf="stretch"
           objectFit="cover"
@@ -79,13 +121,14 @@ export default function HeroLayout3(props) {
             display="flex"
             direction="column"
             justifyContent="flex-start"
+            textDecoration="underline"
             shrink="0"
             alignSelf="stretch"
             objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="SOL-ME Platform"
+            children="Easy donations with Solana Pay"
             {...getOverrideProps(overrides, "SubTitle")}
           ></Text>
           <Text
@@ -105,7 +148,7 @@ export default function HeroLayout3(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Description for the Project"
+            children="Sol-Me adds an additional source of income for influencers, content creators, and open source developers. Enabling them to receive donations by using Solana Pay quickly with a 0% fee."
             {...getOverrideProps(overrides, "Body")}
           ></Text>
         </Flex>

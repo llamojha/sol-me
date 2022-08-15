@@ -11,14 +11,7 @@ import {
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
 } from "@aws-amplify/ui-react/internal";
-import {
-  Button,
-  Flex,
-  Image,
-  SearchField,
-  Text,
-  View,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBarWallet(props) {
   const { overrides: overridesProp, ...rest } = props;
   const variants = [
@@ -28,7 +21,6 @@ export default function NavBarWallet(props) {
         LogoInFrame: {},
         LogoText: {},
         LogoFrame: {},
-        SearchField: {},
         Button: {},
         SearchBar: {},
         SolanaWallet: {},
@@ -42,7 +34,6 @@ export default function NavBarWallet(props) {
         LogoInFrame: {},
         LogoText: {},
         LogoFrame: {},
-        SearchField: {},
         Button: {},
         SearchBar: { boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" },
         SolanaWallet: {},
@@ -59,10 +50,13 @@ export default function NavBarWallet(props) {
     <Flex
       gap="20px"
       height="96px"
-      alignItems="flex-start"
+      justifyContent="center"
+      alignItems="center"
       position="relative"
       padding="25px 32px 25px 32px"
       backgroundColor="rgba(255,255,255,1)"
+      width="100%"
+      backgroundImage="linear-gradient(90deg, hsl(331, 41%, 66%),hsl(332, 54%, 43%))"
       {...rest}
       {...getOverrideProps(overrides, "NavBarWallet")}
     >
@@ -126,22 +120,6 @@ export default function NavBarWallet(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "SearchBar")}
       >
-        <SearchField
-          display="flex"
-          direction="column"
-          width="300px"
-          justifyContent="center"
-          shrink="0"
-          height="46px"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          placeholder="Placeholder"
-          size="large"
-          isDisabled={false}
-          labelHidden={true}
-          variation="default"
-          {...getOverrideProps(overrides, "SearchField")}
-        ></SearchField>
         <Button
           display="flex"
           gap="0"

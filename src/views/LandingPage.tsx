@@ -1,24 +1,29 @@
-import './LandingPage.css';
+import './Amplify.css';
 import React, { FC, useState, useEffect } from 'react';
 import { DataStore } from 'aws-amplify'
-
-import { HeroLayout3, Features4x1 } from '../ui-components'
-
+import { HeroLayoutVariant, FeaturesVariant } from '../ui-components'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-
 import { Users } from '../models'
+import { useBreakpointValue } from '@aws-amplify/ui-react';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
+
+type Variant = "Small" | "Default";
 
 const LandingPage: FC = (props) => {
   // State
   const [users, setUsers] = useState<Array<Users>>([]);
 
+  const variant = useBreakpointValue({
+    base: "Small",
+    small: "Small",
+    medium: "Default",
+  });
+
   const getUsers = async () => {
     const data: Users[] = await DataStore.query(Users);
     setUsers(data);
   }
-
 
   const buttonFrameOverride = {
     "ButtonFrame": {
@@ -37,15 +42,26 @@ const LandingPage: FC = (props) => {
 
   return (
       <div className="LandingPage">
-        <HeroLayout3 overrides={buttonFrameOverride} />
-        <Features4x1
+        <HeroLayoutVariant variant={variant as Variant} />
+      </div>
+  );
+
+  /* Enable Feature Profiles once we get them
+
+    return (
+      <div className="LandingPage">
+        <HeroLayoutVariant variant={variant as Variant} />
+        <FeaturesVariant
           user1={user1}
           user2={user2}
           user3={user3}
           user4={user4}
+          variant={variant as Variant}
         />
       </div>
   );
+
+  */
 };
 
 export default LandingPage;

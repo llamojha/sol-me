@@ -7,7 +7,7 @@ import { NavBarWallet } from '../ui-components'
 
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import logo from '../logo.svg';
+import logo from '../logo.png';
 
 import { DataStore } from 'aws-amplify'
 import { Users } from '../models'
@@ -44,11 +44,11 @@ const Header: FC = (props) => {
           new Users({
             WalletAddress: publicKey.toString(),
             Username: publicKey.toString(),
-            ProfileImage: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
-            ProfileBanner: "https://www.llamojha.com/assets/img/alvaro-llamojha.jpg",
-            Description: "This user is from the API",
-            DonationDescription: "This user is from the API",
-            DonationTitle: "This user is from the API"
+            ProfileImage: "https://www.sol-me.com/favicon.ico",
+            ProfileBanner: "https://www.sol-me.com/default-banner900x480.png",
+            Description: "Welcome to my Sol Me page. ",
+            DonationDescription: "Support my work with a donation in Sol or USDC",
+            DonationTitle: "Send me some Sol",
           })
         );
 
