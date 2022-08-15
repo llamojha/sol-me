@@ -137,7 +137,7 @@ export default function FeaturesVariant(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="318px"
+          width="280px"
           height="161px"
           shrink="0"
           position="relative"
@@ -191,7 +191,7 @@ export default function FeaturesVariant(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="318px"
+          width="280px"
           height="161px"
           shrink="0"
           position="relative"
@@ -245,7 +245,7 @@ export default function FeaturesVariant(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="318px"
+          width="280px"
           height="161px"
           shrink="0"
           position="relative"
@@ -299,7 +299,7 @@ export default function FeaturesVariant(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="318px"
+          width="280px"
           height="161px"
           shrink="0"
           position="relative"
