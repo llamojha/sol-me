@@ -15,7 +15,7 @@ import BigNumber from "bignumber.js";
 const createTransaction = async (pageID: PublicKeyInitData, userID: PublicKeyData, orderID: PublicKeyInitData) => {
   try {
     // Convert our price to the correct format
-    const DonationPrice = 0.3; // TODO: Make this a parameter
+    const DonationPrice = 0.1; // TODO: Make this a parameter
     const bigAmount = new BigNumber(DonationPrice);
     const buyerPublicKey = new PublicKey(userID);
     const sellerPublicKey = new PublicKey(pageID);
