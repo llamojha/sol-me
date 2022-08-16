@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import React, { FC, ReactNode, useState, useMemo } from 'react';
 import { clusterApiUrl } from '@solana/web3.js';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+
 import {
     GlowWalletAdapter,
     LedgerWalletAdapter,
@@ -22,6 +23,7 @@ import ProfilePage from './views/ProfilePage';
 import Header from './views/Header';
 import Page404 from './views/Page404';
 
+
 const App: FC = () => {
   return (
       <Context>
@@ -33,8 +35,7 @@ export default App;
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Devnet;
-
+  const network = process.env.REACT_APP_NETWORK as WalletAdapterNetwork;
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 

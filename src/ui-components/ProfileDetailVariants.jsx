@@ -36,7 +36,11 @@ export default function ProfileDetailVariants(props) {
     },
     {
       overrides: {
-        ProfileBanner: { height: "224px", shrink: "0", objectFit: "cover" },
+        ProfileBanner: {
+          height: "224px",
+          alignSelf: "stretch",
+          objectFit: "cover",
+        },
         ProfilePicture: {},
         Username: {
           lineHeight: "50px",
@@ -59,7 +63,7 @@ export default function ProfileDetailVariants(props) {
         },
         ProfileInfo: {
           gap: "24px",
-          padding: "16px 12px 16px 12px",
+          padding: "15px 11px 15px 11px",
           height: "280px",
           alignItems: "center",
           shrink: "0",
@@ -124,7 +128,6 @@ export default function ProfileDetailVariants(props) {
       >
         <Flex
           gap="32px"
-          height="580px"
           alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
@@ -135,10 +138,9 @@ export default function ProfileDetailVariants(props) {
           {...getOverrideProps(overrides, "ProfileContent")}
         >
           <Image
-            width="540px"
-            grow="1"
-            basis="540px"
-            alignSelf="stretch"
+            width="700px"
+            height="600px"
+            shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             src={user?.ProfileBanner}
@@ -147,9 +149,9 @@ export default function ProfileDetailVariants(props) {
           <Flex
             gap="48px"
             direction="column"
-            width="540px"
+            width="100%"
             grow="1"
-            basis="540px"
+            basis="380px"
             alignSelf="stretch"
             position="relative"
             border="1px SOLID rgba(255,255,255,1)"
@@ -173,6 +175,7 @@ export default function ProfileDetailVariants(props) {
                 height="65px"
                 shrink="0"
                 position="relative"
+                border="1px SOLID rgba(255,255,255,1)"
                 borderRadius="160px"
                 padding="0px 0px 0px 0px"
                 src={user?.ProfileImage}
@@ -189,9 +192,9 @@ export default function ProfileDetailVariants(props) {
                 direction="column"
                 justifyContent="center"
                 letterSpacing="0.01px"
-                width="427px"
+                width="267px"
                 grow="1"
-                basis="427px"
+                basis="267px"
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
@@ -230,9 +233,9 @@ export default function ProfileDetailVariants(props) {
         <Flex
           gap="24px"
           direction="column"
-          height="182px"
+          height="162px"
           grow="1"
-          basis="182px"
+          basis="162px"
           alignSelf="stretch"
           objectFit="cover"
           position="relative"
@@ -275,7 +278,7 @@ export default function ProfileDetailVariants(props) {
               fontFamily="Inter"
               fontSize="16px"
               fontWeight="400"
-              color="rgba(92,102,112,1)"
+              color="rgba(0,0,0,1)"
               lineHeight="24px"
               textAlign="left"
               display="flex"
