@@ -6,21 +6,22 @@ import {
   Transaction,
   SystemProgram,
   LAMPORTS_PER_SOL,
+  PublicKeyData,
+  PublicKeyInitData,
 } from "@solana/web3.js";
 import BigNumber from "bignumber.js";
 
 
-const createTransaction = async (pageID, userID, orderID) => {
+const createTransaction = async (pageID: PublicKeyInitData, userID: PublicKeyData, orderID: PublicKeyInitData) => {
   try {
     // Convert our price to the correct format
     const DonationPrice = 0.3; // TODO: Make this a parameter
-    const bigAmount = BigNumber(DonationPrice);
+    const bigAmount = new BigNumber(DonationPrice);
     const buyerPublicKey = new PublicKey(userID);
     const sellerPublicKey = new PublicKey(pageID);
-    const network = WalletAdapterNetwork.Devnet;
+    const network = process.env.REACT_APP_NETWORK as WalletAdapterNetwork;
     const endpoint = clusterApiUrl(network);
     const connection = new Connection(endpoint);
-
     // A blockhash is sort of like an ID for a block. It lets you identify each block.
     const { blockhash } = await connection.getLatestBlockhash("finalized");
 
