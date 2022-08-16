@@ -45,7 +45,7 @@ const Header: FC = (props) => {
             WalletAddress: publicKey.toString(),
             Username: publicKey.toString(),
             ProfileImage: "https://www.sol-me.com/favicon.ico",
-            ProfileBanner: "https://www.sol-me.com/default-banner.png",
+            ProfileBanner: "https://www.sol-me.com/default-banner900x480.png",
             Description: "Welcome to my Sol Me page. ",
             DonationDescription: "Support my work with a donation in Sol or USDC",
             DonationTitle: "Send me some Sol",
