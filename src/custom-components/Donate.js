@@ -41,6 +41,7 @@ export default function Donate({ PageID }) {
       const txHash = await sendTransaction(tx, connection);
       console.log(`Transaction sent: https://solscan.io/tx/${txHash}?cluster=${process.env.REACT_APP_NETWORK}`);
       setStatus(STATUS.Submitted);
+      alert(`Donation Sent to ${PageID}`);
     } catch (error) {
       console.error(error);
     } finally {
