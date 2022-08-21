@@ -2,7 +2,7 @@ import './Amplify.css';
 import React, { FC, useState, useEffect } from 'react';
 import { DataStore } from 'aws-amplify'
 import { useParams } from 'react-router-dom';
-import { ProfileDetailVariants } from '../ui-components';
+import { ProfileDetails } from '../ui-components';
 import { useWallet } from '@solana/wallet-adapter-react';
 import Donate from '../custom-components/Donate';
 import { Users } from '../models'
@@ -13,8 +13,14 @@ type Variant = "Small" | "Default";
 const ProfilePage: FC = (props) => {
   const { publicKey } = useWallet();
   const { pageId } = useParams();
-  //const { publicKey } = useWallet();
   const [user, setUser] = useState<Users>();
+  const [editing, setEditing] = useState(false);
+
+  let isOwner = false;
+  if(user !== undefined && user !== null) {
+    isOwner = ( publicKey ? publicKey.toString() === user.WalletAddress : false );
+  }
+
 
   const variant = useBreakpointValue({
     base: "Small",
@@ -23,12 +29,15 @@ const ProfilePage: FC = (props) => {
   });
 
   const getUser = async () => {
-    if(pageId !== null && pageId !== undefined){
-      const data = (await DataStore.query(Users)).filter(u => u.WalletAddress === pageId.toString())[0];
-      if(data === undefined){
+    if(pageId !== null && pageId !== undefined){;
+      const dataWallet = (await DataStore.query(Users)).filter(u => u.WalletAddress === pageId.toString())[0]
+      const dataUser = (await DataStore.query(Users)).filter(u => u.Username === pageId.toString())[0]
+      if(dataWallet === undefined && dataUser === undefined){
         document.location.href = "/404";
+      } else if (dataWallet !== undefined){
+        setUser(dataWallet);
       } else {
-        setUser(data);
+        setUser(dataUser);
       }
     } else {
       console.log("No pageId found");
@@ -40,6 +49,13 @@ const ProfilePage: FC = (props) => {
       children: <Donate PageID={pageId} />
     },
   }
+
+/*    isOwner && (
+  <button className="create-product-button" onClick={() => setEditing(!editing)}>
+  {editing ? "Close" : "Edit Profile"}
+</button>
+)}
+*/
 
   useEffect(() => {
     getUser()
@@ -54,7 +70,7 @@ const ProfilePage: FC = (props) => {
   } else {
     return (
       <div className="ProfilePage">
-          <ProfileDetailVariants variant={variant as Variant} user={user} overrides={override}  />
+          <ProfileDetails variant={variant as Variant} user={user} overrides={override}  />
       </div>
       );
   }

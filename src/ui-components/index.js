@@ -14,6 +14,7 @@ export { default as Features4x1 } from "./Features4x1";
 export { default as HeroLayoutVariant } from "./HeroLayoutVariant";
 export { default as ItemCard } from "./ItemCard";
 export { default as FormCheckout } from "./FormCheckout";
+export { default as ProfileDetails } from "./ProfileDetails";
 export { default as StandardCard } from "./StandardCard";
 export { default as ProductCard } from "./ProductCard";
 export { default as ReviewCard } from "./ReviewCard";
