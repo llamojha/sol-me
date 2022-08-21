@@ -49,12 +49,7 @@ export default function ProfileDetailVariants(props) {
           basis: "355px",
           height: "50px",
         },
-        Profile: {
-          gap: "16px",
-          height: "92px",
-          padding: "16px 0px 16px 20px",
-          border: "1px SOLID rgba(255,255,255,1)",
-        },
+        Profile: { gap: "16px", height: "90px", padding: "16px 0px 16px 20px" },
         DonationDescription: { alignSelf: "stretch", objectFit: "cover" },
         SolanaPayFrame: {
           height: "48px",

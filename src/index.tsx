@@ -1,9 +1,10 @@
+import './index.css';
 import '@aws-amplify/ui-react/styles.css'
 import config from './aws-exports'
 import { Amplify } from 'aws-amplify'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import { AmplifyProvider } from '@aws-amplify/ui-react'
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
 import App from './App';
 
 Amplify.configure(config);
